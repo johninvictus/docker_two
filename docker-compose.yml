@@ -16,7 +16,7 @@ services:
       - nginx-network
 
   web:
-    image: "johninvictus/docker_two:0.0.1.3-5d9b602000"
+    image: "johninvictus/docker_two:0.0.1.4-ba882b92ba"
     command: foreground
     depends_on:
       - db
