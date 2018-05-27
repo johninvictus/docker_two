@@ -15,5 +15,5 @@ done
 set =e
 
 echo "Running migrations"
-bin/docker_two rpc Elixir.Release.Tasks migrate
+bin/docker_two rpc Elixir.Release.Tasks seed
 echo "Migrations run successfully"
