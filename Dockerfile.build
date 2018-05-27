@@ -11,7 +11,8 @@ RUN \
       elixir@edge=1.4.2-r0 && \
     rm -rf /var/cache/apk/*
 
-  RUN apk update && apk add bash
+    RUN apk update && apk add bash
+
 
 # Install Hex+Rebar
 RUN mix local.hex --force && \

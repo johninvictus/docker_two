@@ -11,6 +11,11 @@ config :docker_two,
 
 # Configures the endpoint
 config :docker_two, DockerTwoWeb.Endpoint,
+  http: [port: {:system, "PORT"}],
+  url: [host: {:system, "HOST"}, port: {:system, "PORT"}],
+  server: true,
+  root: ".",
+  version: Application.spec(:myapp, :vsn),
   url: [host: "localhost"],
   secret_key_base: "0f3bQHPe4tpDJrf5ij7h1SfAvT/E3uS51I/9Xay+NyxD3S2MN26UvxUCpiccOrWV",
   render_errors: [view: DockerTwoWeb.ErrorView, accepts: ~w(html json)],

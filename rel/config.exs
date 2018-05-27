@@ -33,6 +33,7 @@ environment :dev do
 end
 
 environment :prod do
+  set(post_start_hook: "rel/hooks/post_start")
   set(include_erts: false)
   set(include_src: false)
   set(cookie: :"uI/qc!3^71V&Yp*gPKI)E*.:5hOM&WH$Aic_o{psO.MCe*A?^k2mESt=]Br_L_G_")

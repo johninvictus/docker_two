@@ -15,8 +15,19 @@ use Mix.Config
 # which you typically run after static files are built.
 config :docker_two, DockerTwoWeb.Endpoint,
   load_from_system_env: true,
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  url: [host: "example.com", port: 80]
+
+config :docker_two, DockerTwoWeb.Endpoint,
+  secret_key_base: "Av91vDn5MZJj3AniKI6XQuvp3ED45UJMsbtoop1EZM+kXocK6ro4lo6UINyiPWz9"
+
+# Configure your database
+config :docker_two, DockerTwo.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: {:system, "DATABASE_URL"},
+  username: "postgres",
+  password: "postgres",
+  database: "docker_two_prod",
+  pool_size: 15
 
 # Do not print debug messages in production
 config :logger, level: :info

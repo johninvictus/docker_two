@@ -1,0 +1,33 @@
+version: "3"
+
+networks:
+  nginx-network:
+    external: true
+
+services:
+
+  db:
+    image: postgres:9.6.2
+    environment:
+      POSTGRES_DB: "docker_two_prod"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    networks:
+      - nginx-network
+
+  web:
+    image: "johninvictus/docker_two:0.0.1.1-312e1c7bee"
+    command: foreground
+    depends_on:
+      - db
+    ports:
+      - "4000:4000"
+    environment:
+      DATABASE_URL: "ecto://postgres:postgres@db/docker_two_prod"
+      PORT: 4000
+      POOL_SIZE: 10
+      HOST: "localhost"
+    networks:
+      - nginx-network
+    expose:
+      - "4000"
