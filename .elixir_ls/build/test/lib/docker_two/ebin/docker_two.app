@@ -7,6 +7,7 @@
                         'Elixir.DockerTwo.Account.User',
                         'Elixir.DockerTwo.Application',
                         'Elixir.DockerTwo.DataCase',
+                        'Elixir.DockerTwo.Release.Tasks',
                         'Elixir.DockerTwo.ReleaseTasks',
                         'Elixir.DockerTwo.Repo','Elixir.DockerTwoWeb',
                         'Elixir.DockerTwoWeb.ChannelCase',
